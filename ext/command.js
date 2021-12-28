@@ -10,7 +10,7 @@ class Command {
 
 		this.aliases = info.aliases || [];
 		
-		this.description = info.description || '';
+		this.description = (!info.description.length) ? 'No Description' : info.description;
 
 		this.hidden = Boolean(info.hidden);
 
@@ -18,17 +18,19 @@ class Command {
 
 		this.group = info.group;
 
-		this.nsfw = Boolean(info.nsfw);
+		this.nsfw = Boolean(info.nsfw) || false;
 
-		this.guildOnly = Boolean(info.guildOnly);
+		this.guildOnly = Boolean(info.guildOnly) || true;
 
-		this.ownerOnly = Boolean(info.ownerOnly);
+		this.ownerOnly = Boolean(info.ownerOnly) || false;
 
 		this.clientPermissions = info.clientPermissions || null;
 
 		this.userPermissions = info.userPermissions || null;
 
 		this.usage = info.usage || null;
+
+    this.argsRequired = info.argsRequired || false;
 
     this.run = info.run;
     
@@ -81,7 +83,9 @@ class Command {
     // description
 		if(typeof info.description !== 'string') throw new TypeError('Command description must be a string.');
 
-    // gropu
+    if(typeof info.argsRequired !== 'boolean') throw new TypeError('Command args must be a boolean.');
+
+    // group
 		if(typeof info.group !== 'string') throw new TypeError('Command group must be a string.');
 		if(info.group !== info.group.toLowerCase()) throw new RangeError('Command group must be lowercase.');
 
