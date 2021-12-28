@@ -35,7 +35,10 @@ class Bot extends Discord.Client {
   start(token) {
     super.login(token)
 
+    Object.defineProperty(process, 'botCommand', { value: function() { return `${process.cwd()}/ext/command`} })
+
     this.commands = new Discord.Collection();
+    this.categories = readdirSync(this.commandFolder);
     const commandFolders = readdirSync(this.commandFolder);
 
     for (const folder of commandFolders) 
