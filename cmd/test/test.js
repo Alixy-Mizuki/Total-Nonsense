@@ -1,4 +1,4 @@
-let Command = require(process.cwd() + '/ext/command')
+let Command = require(process.botCommand())
 
 module.exports = new Command({
       name: 'test',
@@ -9,11 +9,14 @@ module.exports = new Command({
       group: 'test',
       nsfw: false,
       guildOnly: true,
-      ownerOnly: true,
+      ownerOnly: false,
       clientPermissions: [],
       userPermissions: [],
-      usage: [],
-      async run({message, args}) {
+      argsRequired: true,
+      usage: ['hi','bye'],
+      async run({client, message, args}) {
+        
+        
         message.channel.send('hi')
       }
 })
