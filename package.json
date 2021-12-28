@@ -1,14 +1,14 @@
 {
-  "name": "Total-Nonsense",
-  "version": "1.0.0",
-  "description": "A Custom Handler",
+  "name": "total-nonsense",
+  "version": "0.0.5",
+  "description": "A custom Handler made by Alixy-Mizuki on github",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "Alixy-Mizuki",
-  "license": "CC10",
+  "license": "CC0-1.0",
   "dependencies": {
     "common-tags": "^1.8.2",
     "discord.js": "^13.3.1",
@@ -16,5 +16,14 @@
     "is-promise": "^4.0.0",
     "node": "^17.3.0",
     "require-all": "^3.0.0"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Alixy-Mizuki/Total-Nonsense.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Alixy-Mizuki/Total-Nonsense/issues"
+  },
+  "homepage": "https://github.com/Alixy-Mizuki/Total-Nonsense#readme"
 }
